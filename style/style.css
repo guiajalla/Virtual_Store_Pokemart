@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: #F2F2F2;
+}
+header{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    align-items: center;
+    background: #69ADFD;
+ }
+
+ #logo {
+    width: 125px;
+    height: 125px;
+ }
