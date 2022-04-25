@@ -14,10 +14,38 @@ header{
     display: grid;
     grid-template-columns: auto auto auto auto;
     align-items: center;
+    text-align: center;
     background: #69ADFD;
  }
 
  #logo {
-    width: 125px;
-    height: 125px;
+    width: 75px;
+    height: 75px;
  }
+
+ .search button {
+    position: absolute;
+    z-index: 10;
+    border: none;
+    background: white;
+    outline: none;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 0px 14px 14px 0px;
+  }
+  
+  .search div {
+    position: relative;
+    width: 200px;
+  }
+  
+  .search input {
+    width: 80%;
+    border: none;
+    height: 21px;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 14px 0px 0px 14px;
+  }
+
+  .search img{
+      width: 16px;
+  }
