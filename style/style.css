@@ -12,7 +12,7 @@ body {
 }
 header{
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 15% auto 15% 15%;
     align-items: center;
     text-align: center;
     background: #69ADFD;
@@ -48,4 +48,9 @@ header{
 
   .search img{
       width: 16px;
+  }
+
+  #login {
+    border: solid 1px;
+    border-radius: 6px;
   }
