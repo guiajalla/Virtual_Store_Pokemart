@@ -81,4 +81,22 @@ header{
     color: black;
   }
 
+  main {
+    background-color: #69ADFD;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 15px;
+  }
+
+  .title-m {
+    display: grid;
+  }
+
+  footer {
+    background-color: #DDDCDC;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+
   
