@@ -13,7 +13,7 @@
             <a href="index.html"><img src="img/logo.png" id="logo"></a>
             <form action="">   
                 <div class="search">
-                        <input type="text" placeholder="Filtrar por...">
+                        <input type="text" placeholder="Filtrar por..." onkeyup="filterItens(this.value)">
                         <button type="submit"><img src="img/search.png"/></button>
                 </div>
             </form>
@@ -22,10 +22,10 @@
         </header>
         <nav>
             <ul>
-                <li><a href="#">Pokeballs</a></li>
-                <li><a href="#">Potions</a></li>
-                <li><a href="#">Antidotes</a></li>
-                <li><a href="#">Others</a></li>
+                <li><a href="javascript:filterItens('Pokeball')">Pokeballs</a></li>
+                <li><a href="javascript:filterItens('Potions')">Potions</a></li>
+                <li><a href="javascript:aviso()">Antidotes</a></li>
+                <li><a href="javascript:aviso()">Others</a></li>
             </ul>
         </nav>
         <main>

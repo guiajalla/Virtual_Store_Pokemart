@@ -12,5 +12,6 @@
         $highLightProducts[] = $linha;
     }
 
+
     echo json_encode($highLightProducts);
 ?>
