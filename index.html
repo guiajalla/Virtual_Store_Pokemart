@@ -32,41 +32,7 @@
             <div class="title-m">
                 <h1>Poké Mart</h1>
             </div>
-            <div class="itens-store" id="itens-store">
-                <div id="item">
-                    <img src="./img/Dream_Poké_Ball_Sprite.png" id="img-item">
-                    <div>
-                        <p>Pokeball</p>
-                        <img src="./img/baseline_add_shopping_cart_black_24dp.png" title="adicionar ao carrinho">
-                        <p><img src="./img/PokémonDollar_ColoXD.png" id="pokedollar"> 200</p>
-                        <a href="descricao" title="descricao">
-                            <img src="./img/baseline_add_black_24dp.png">
-                        </a>
-                    </div>
-                </div>
-                <div id="item">
-                    <img src="./img/Dream_Poké_Ball_Sprite.png" id="img-item">
-                    <div>
-                        <p>Pokeball</p>
-                        <img src="./img/baseline_add_shopping_cart_black_24dp.png" title="adicionar ao carrinho">
-                        <p><img src="./img/PokémonDollar_ColoXD.png" id="pokedollar"> 200</p>
-                        <a href="descricao" title="descricao">
-                            <img src="./img/baseline_add_black_24dp.png">
-                        </a>
-                    </div>
-                </div>
-                <div id="item">
-                    <img src="./img/Dream_Poké_Ball_Sprite.png" id="img-item">
-                    <div>
-                        <p>Pokeball</p>
-                        <img src="./img/baseline_add_shopping_cart_black_24dp.png" title="adicionar ao carrinho">
-                        <p><img src="./img/PokémonDollar_ColoXD.png" id="pokedollar"> 200</p>
-                        <a href="descricao" title="descricao">
-                            <img src="./img/baseline_add_black_24dp.png">
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <div class="itens-store" id="itens-store"></div>
         </main>
         <footer>
             <div>
@@ -92,5 +58,19 @@
                 </ul>
             </div>
         </footer>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span onclick="hideDescription()">&times;</span>
+                <img src="./img/Dream_Poké_Ball_Sprite.png">
+                <div id="aboutItem">
+                    <h2>Pokeball</h2>
+                    <div>
+                        <h3>Descrição:</h3>
+                        <p>Abublé das ideia</p>
+                    </div>
+                </div>
+                <img src="./img/baseline_add_shopping_cart_black_24dp.png" title="adicionar ao carrinho" value="' + data[i].id + '" onclick="addCart(this.value)">                
+            </div>
+        </div>
     </body>
 </html>

@@ -11,7 +11,7 @@ function iniciar(){
             info.innerHTML += '<p><b>' + data[i].name + '</b></p>';
             info.innerHTML += '<img src="./img/baseline_add_shopping_cart_black_24dp.png" title="adicionar ao carrinho" value="' + data[i].id + '" onclick="addCart(this.value)">';
             info.innerHTML += '<p><img src="./img/PokémonDollar_ColoXD.png" id="pokedollar">' + data[i].price + '</p>';
-            info.innerHTML += '<a href="./pages/aboutItem.html" title="descricao"> <img src="./img/baseline_add_black_24dp.png"></a>'
+            info.innerHTML += '<a href="javascript:showDescription('+data[i].id+')" title="descricao"> <img src="./img/baseline_add_black_24dp.png"></a>'
             item.appendChild(img);
             item.appendChild(info);
             $('#itens-store').append(item);
@@ -28,7 +28,7 @@ function iniciar(){
                 info.innerHTML += '<p><b>' + data[i].name + '</b></p>';
                 info.innerHTML += '<img src="./img/baseline_add_shopping_cart_black_24dp.png" title="adicionar ao carrinho" value="' + data[i].id + '" onclick="addCart(this.value)">';
                 info.innerHTML += '<p><img src="./img/PokémonDollar_ColoXD.png" id="pokedollar">' + data[i].price + '</p>';
-                info.innerHTML += '<a href="./pages/aboutItem.html" title="descricao"> <img src="./img/baseline_add_black_24dp.png"></a>'
+                info.innerHTML += '<a href="javascript:showDescription('+data[i].id+')" title="descricao"> <img src="./img/baseline_add_black_24dp.png"></a>'
                 item.appendChild(img);
                 item.appendChild(info);
                 $('#itens-store').append(item);
@@ -50,12 +50,37 @@ function filterItens(value){
             info.innerHTML += '<p><b>' + data[i].name + '</b></p>';
             info.innerHTML += '<img src="./img/baseline_add_shopping_cart_black_24dp.png" title="adicionar ao carrinho" value="' + data[i].id + '" onclick="addCart(this.value)">';
             info.innerHTML += '<p><img src="./img/PokémonDollar_ColoXD.png" id="pokedollar">' + data[i].price + '</p>';
-            info.innerHTML += '<a href="./pages/aboutItem.html" title="descricao"> <img src="./img/baseline_add_black_24dp.png"></a>'
+            info.innerHTML += '<a href="javascript:showDescription('+data[i].id+')" title="descricao"> <img src="./img/baseline_add_black_24dp.png"></a>'
             item.appendChild(img);
             item.appendChild(info);
             $('#itens-store').append(item);
         }
     });
+}
+
+function showDescription(id){
+    $('.modal').addClass('show-modal');
+    $.getJSON('./php/loadDescription.php', {id: id}, function(data){
+        $('.modal-content').empty();
+        for(i in data){
+            let img = document.createElement('img');
+            let item = document.createElement('div');
+
+            img.src = data[i].image;
+            item.id = 'aboutItem';
+            item.innerHTML += '<h2>' + data[i].name + '</h2>';
+            item.innerHTML += data[i].description;
+
+            $('.modal-content').append('<span onclick="hideDescription()">&times;</span>')
+            $('.modal-content').append(img);  
+            $('.modal-content').append(item);  
+            $('.modal-content').append('<img src="./img/baseline_add_shopping_cart_black_24dp.png" title="adicionar ao carrinho" value="' + data[i].id + '" onclick="addCart(this.value)">')
+        }
+    });
+}
+
+function hideDescription(){
+    $('.modal').removeClass('show-modal');
 }
 
 function aviso(){
