@@ -16,8 +16,8 @@
     }
 
     $check = [];
-    while ($linha = mysqli_fetch_assoc($resultado)){
-        $check[] = $linha;
+    while ($row = mysqli_fetch_assoc($resultado)){
+        $check[] = $row;
     }
     $check = array_column($check, 'count(email)');
     $data['check'] = implode(" ", $check);

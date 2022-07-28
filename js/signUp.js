@@ -53,7 +53,12 @@ function login(){
         return false;
     }
     $.getJSON('../php/login.php', {email: email, password: password}, function(data){
-        
-        console.log(data);
-});
+        if(Object.keys(data).length > 0){
+            console.log(data);
+            alert('Login feito!')
+        } else {
+            alert('Usuario ou senha inválidos.')
+        }
+    });
 }
+
