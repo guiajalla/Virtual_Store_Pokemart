@@ -46,6 +46,10 @@ header{
   cursor: pointer;
 }
 
+#addCart {
+  cursor: pointer;
+}
+
 .search div {
   position: relative;
   width: 200px;

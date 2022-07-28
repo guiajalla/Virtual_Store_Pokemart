@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: #F2F2F2;
+  display: grid;
+  font-family: "Roboto", sans-serif;
+}
+
+header{
+    display: grid;
+    align-items: center;
+    text-align: center;
+    background: #69ADFD;
+  }
+
+#logo {
+    width: 75px;
+    height: 75px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    grid-column-gap: 50px;
+    margin: 10px;
+}
+
+main h2 {
+    text-align: center;
+}
+
+main > div{
+    background-color: #ffffff;
+    border: 1px solid #0000007a;
+    box-shadow: inset 1px 1px 1px rgb(0 0 0 / 25%);
+    border-radius: 6px 6px 6px 6px;
+}
+
+fieldset {
+    margin: 3%;
+    background-color: #fdfdfd;
+    border: 1px solid #0000003d;
+    box-shadow: inset 1px 1px 1px rgb(0 0 0 / 25%);
+    border-radius: 6px 6px 6px 6px;
+    padding: 3%;
+}
+
+input{
+    border-radius: 3px;
+    width: 100%;
+    height: 25px;
+}
+
+fieldset div {
+    margin: 5px;
+}
+
+fieldset #btlogin, fieldset #btsignUp {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold
+}
+
+fieldset #btlogin:hover, fieldset #btsignUp:hover {
+    background-color: lightgrey;
+}
