@@ -9,7 +9,7 @@ function iniciar(){
             img.id = 'img-item';
             img.src = data[i].image;
             info.innerHTML += '<p><b>' + data[i].name + '</b></p>';
-            info.innerHTML += '<img src="./img/baseline_add_shopping_cart_black_24dp.png" id="addCart" title="Adicionar ao Carrinho" value="' + data[i].id + '" onclick="addCart(this.value)">';
+            info.innerHTML += '<img src="./img/baseline_add_shopping_cart_black_24dp.png" id="addCart" title="Adicionar ao Carrinho" value="' + data[i].id + '" onclick="addCart(' + data[i].id + ')">';
             info.innerHTML += '<p><img src="./img/PokémonDollar_ColoXD.png" id="pokedollar">' + data[i].price + '</p>';
             info.innerHTML += '<a href="javascript:showDescription('+data[i].id+')" title="Ver Descricao"> <img src="./img/baseline_add_black_24dp.png"></a>'
             item.appendChild(img);
@@ -26,7 +26,7 @@ function iniciar(){
                 img.id = 'img-item';
                 img.src = data[i].image;
                 info.innerHTML += '<p><b>' + data[i].name + '</b></p>';
-                info.innerHTML += '<img src="./img/baseline_add_shopping_cart_black_24dp.png" id="addCart" title="Adicionar ao Carrinho" value="' + data[i].id + '" onclick="addCart(this.value)">';
+                info.innerHTML += '<img src="./img/baseline_add_shopping_cart_black_24dp.png" id="addCart" title="Adicionar ao Carrinho" value="' + data[i].id + '" onclick="addCart(' + data[i].id + ')">';
                 info.innerHTML += '<p><img src="./img/PokémonDollar_ColoXD.png" id="pokedollar">' + data[i].price + '</p>';
                 info.innerHTML += '<a href="javascript:showDescription('+data[i].id+')" title="Ver Descricao"> <img src="./img/baseline_add_black_24dp.png"></a>'
                 item.appendChild(img);
@@ -48,7 +48,7 @@ function filterItens(value){
             img.id = 'img-item';
             img.src = data[i].image;
             info.innerHTML += '<p><b>' + data[i].name + '</b></p>';
-            info.innerHTML += '<img src="./img/baseline_add_shopping_cart_black_24dp.png" id="addCart" title="Adicionar ao Carrinho" value="' + data[i].id + '" onclick="addCart(this.value)">';
+            info.innerHTML += '<img src="./img/baseline_add_shopping_cart_black_24dp.png" id="addCart" title="Adicionar ao Carrinho" value="' + data[i].id + '" onclick="addCart(' + data[i].id + ')">';
             info.innerHTML += '<p><img src="./img/PokémonDollar_ColoXD.png" id="pokedollar">' + data[i].price + '</p>';
             info.innerHTML += '<a href="javascript:showDescription('+data[i].id+')" title="Ver Descricao"> <img src="./img/baseline_add_black_24dp.png"></a>'
             item.appendChild(img);
@@ -74,13 +74,20 @@ function showDescription(id){
             $('.modal-content').append('<span onclick="hideDescription()">&times;</span>')
             $('.modal-content').append(img);  
             $('.modal-content').append(item);  
-            $('.modal-content').append('<img src="./img/baseline_add_shopping_cart_black_24dp.png" id="addCart" title="Adicionar ao Carrinho" value="' + data[i].id + '" onclick="addCart(this.value)">')
+            $('.modal-content').append('<img src="./img/baseline_add_shopping_cart_black_24dp.png" id="addCart" title="Adicionar ao Carrinho" value="' + data[i].id + '" onclick="addCart(' + data[i].id + ')">');
         }
     });
 }
 
 function hideDescription(){
     $('.modal').removeClass('show-modal');
+}
+
+function addCart(v){
+    $.get('./php/addCart.php', {id: v}, function(data){
+        //alert('Produto adicionado ao carrinho!');
+        console.log(data);
+    });
 }
 
 function aviso(){

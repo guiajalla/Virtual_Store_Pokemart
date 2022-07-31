@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Pokemart</title>
+        <link rel="stylesheet" type="text/css" href="../style/styleLogin.css">
+        <link rel="shortcut icon" type="imagex/png" href="../img/logo.png">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="../js/email.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="../index.html"><img src="../img/logo.png" id="logo"></a>
+        </header>
+        <main>
+            <div>
+                <h2>Fale Conosco</h2>
+                <form action="../php/contactUs.php" method="post">
+                    <fieldset>
+                        <div>
+                            <span>Digite seu e-mail: </span>
+                            <input type="email" id="email">
+                        </div>
+                        <div>
+                            <span>Assunto: </span>
+                            <input type="text" id="subject">
+                        </div>
+                        <div>
+                            <span>O que você deseja saber?</span>
+                            <textarea id="needToKnow"></textarea>
+                        </div>
+                        <input type="button" id="sendQuestion" value="Enviar" onclick="sendEmail()">
+                    </fieldset>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

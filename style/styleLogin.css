@@ -33,11 +33,17 @@ main {
     grid-template-columns: auto auto;
     padding: 10px;
     grid-column-gap: 50px;
+    grid-row-gap: 10px;
     margin: 10px;
 }
 
 main h2 {
     text-align: center;
+}
+
+main h4 {
+    text-align: center;
+    border-bottom: 1px solid;
 }
 
 main > div{
@@ -56,7 +62,7 @@ fieldset {
     padding: 3%;
 }
 
-input{
+input, #needToKnow{
     border-radius: 3px;
     width: 100%;
     height: 25px;
@@ -66,7 +72,7 @@ fieldset div {
     margin: 5px;
 }
 
-fieldset #btlogin, fieldset #btsignUp {
+fieldset #btlogin, fieldset #btsignUp, fieldset #sendQuestion {
     width: 100%;
     height: 30px;
     margin-top: 10px;
@@ -76,6 +82,48 @@ fieldset #btlogin, fieldset #btsignUp {
     font-weight: bold
 }
 
-fieldset #btlogin:hover, fieldset #btsignUp:hover {
+fieldset #btlogin:hover, fieldset #btsignUp:hover, fieldset #sendQuestion:hover {
     background-color: lightgrey;
 }
+
+#needToKnow {
+    height: 100px;
+    resize: none;
+}
+
+#cart {
+    grid-template-rows: auto auto;
+}
+
+#cart #titleCart {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+img {
+    height: 20px;
+    width: 20px;
+    justify-self: center;
+}
+
+.myItens {
+    padding: 10px;
+}
+
+#itens {
+    padding: 10px;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    text-align: center;
+    background-color: lightgrey;
+}
+
+.total {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+    padding: 15px;
+    height: fit-content;
+}
+
