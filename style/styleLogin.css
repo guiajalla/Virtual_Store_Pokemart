@@ -95,7 +95,7 @@ fieldset #btlogin:hover, fieldset #btsignUp:hover, fieldset #sendQuestion:hover 
     grid-template-rows: auto auto;
 }
 
-#cart #titleCart {
+#cart #titleCart, #itens {
     grid-column-start: 1;
     grid-column-end: 3;
 }
@@ -106,24 +106,30 @@ img {
     justify-self: center;
 }
 
-.myItens {
-    padding: 10px;
-}
-
-#itens {
-    padding: 10px;
-    margin: 10px;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+#bodyTable, .amount {
     text-align: center;
-    background-color: lightgrey;
 }
 
-.total {
-    display: grid;
-    grid-template-columns: auto auto;
-    text-align: center;
-    padding: 15px;
-    height: fit-content;
+#del {
+    border: 1px solid #0000007a;
+    color: #0000007a;
 }
 
+#del:hover {
+    border: 1px solid black;
+    color: black;
+    background-color: #ffffff;
+}
+
+#textSubTotal {
+    text-align: end;
+}
+
+#total {
+    text-align: left;
+    font-weight: bold;
+}
+
+table {
+    background-color: #d3d3d336;
+}

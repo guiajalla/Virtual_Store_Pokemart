@@ -9,9 +9,9 @@
         $_SESSION['cart'][$idProduct] = array('id' => $idProduct,'amount'=>1);
     }
 
-    foreach ($_SESSION['cart'] as $key => $value) {
-        //echo $value['amount'];
-    }
-    echo json_encode($_SESSION);
+    // foreach ($_SESSION['cart'] as $key => $value) {
+    //     echo  '<br>id: ' .  $value['id'] . 'Quantidade: ' . $value['amount'];
+    // }
+    //echo json_encode($_SESSION);
 
 ?>

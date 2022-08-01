@@ -85,8 +85,8 @@ function hideDescription(){
 
 function addCart(v){
     $.get('./php/addCart.php', {id: v}, function(data){
-        //alert('Produto adicionado ao carrinho!');
-        console.log(data);
+        alert('Produto adicionado ao carrinho!');
+        //console.log(data);
     });
 }
 

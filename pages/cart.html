@@ -8,7 +8,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="../js/cart.js"></script>
     </head>
-    <body>
+    <body onload="iniciar()">
         <header>
             <a href="../index.html"><img src="../img/logo.png" id="logo"></a>
         </header>
@@ -16,21 +16,37 @@
             <div id='titleCart'>
                 <h2>Poké Mart</h2>
             </div>
+            <table id="itens">
+                <thead>
+                    <tr><th></th><th>Nome</th><th>Preço
+                        (<img src="../img/PokémonDollar_ColoXD.png">)
+                    </th><th>Quantidade</th><th>Retirar</th></tr></thead>
+                <tbody id='bodyTable'>
+                </tbody>
+            </table>
+            
+            
+            <!-- <div id='titleCart'>
+                <h2>Poké Mart</h2>
+            </div>
             <div class='myItens'>
                 <h4>Itens dentro do carrinho!</h4>
                 <div id="itens">
-                    <img id='imgItem' src="../img/Dream_Poké_Ball_Sprite.png">
-                    <p><b>Pokeball</b></p>
-                    <p><img id='imgDollar' src="../img/PokémonDollar_ColoXD.png">200</p>
-                    <div>+</div>
-                    <div>valor</div>
-                    <div>-</div>
+                    <div id='item'>
+                        <img id='imgItem' src="../img/Dream_Poké_Ball_Sprite.png">
+                        <p><b>Pokeball</b></p>
+                        <p><img id='imgDollar' src="../img/PokémonDollar_ColoXD.png">200</p>
+                        <div>+</div>
+                        <div>valor</div>
+                        <div>-</div>
+                        <div id='delItem'>X</div>
+                    </div>
                 </div>
             </div>
             <div class="total">
                 <h3>Subtotal: </h3>
-                <p><img src="../img/PokémonDollar_ColoXD.png">200</p>
-            </div>
+                <p><img id="total" src="../img/PokémonDollar_ColoXD.png">200</p>
+            </div> -->
         </main>
 
 
