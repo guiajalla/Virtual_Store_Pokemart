@@ -29,5 +29,18 @@
             }
             echo json_encode($cart);
         break;
+
+        case 2:
+            $email = filter_var($_REQUEST['email'], FILTER_SANITIZE_STRING);
+            $subject = 'Recibo Pokemart';
+            $message = $_REQUEST['message'];
+
+            if(mail($email, $subject, $message, 'From: Aluno <guiajalla@gmail.com>')){
+                echo 'Email enviado';
+            } else {
+                echo 'Email não enviado';
+            }
+            session_destroy();
+        break;
     }
 ?>

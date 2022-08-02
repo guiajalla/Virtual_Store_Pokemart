@@ -46,7 +46,7 @@ main h4 {
     border-bottom: 1px solid;
 }
 
-main > div{
+main > div, main table{
     background-color: #ffffff;
     border: 1px solid #0000007a;
     box-shadow: inset 1px 1px 1px rgb(0 0 0 / 25%);
@@ -119,6 +119,7 @@ img {
     border: 1px solid black;
     color: black;
     background-color: #ffffff;
+    cursor: pointer;
 }
 
 #textSubTotal {
@@ -132,4 +133,27 @@ img {
 
 table {
     background-color: #d3d3d336;
+}
+
+table thead {
+    line-height: 50px;
+}
+
+tbody td {
+    line-height: 30px;
+}
+
+button {
+    background-color: #fdfdfd;
+    border: 1px solid #0000003d;
+    box-shadow: inset 1px 1px 1px rgb(0 0 0 / 25%);
+    border-radius: 6px 6px 6px 6px;
+    font-weight: bold;
+    color: #0000007a;
+}
+
+button:hover {
+    background-color: #d3d3d336;
+    border: 1px solid black;
+    color: black;
 }

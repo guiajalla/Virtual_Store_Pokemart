@@ -22,7 +22,7 @@ function iniciar() {
 
             row.className = 'item';
             img.src = itensFilter[i].image;
-            nameTd.innerHTML += '<b>' + itensFilter[i].name + '</b>';
+            nameTd.innerHTML += '<b><div class="nameItem">' + itensFilter[i].name + '</div></b>';
             priceTd.innerHTML += '<div class="price">' + itensFilter[i].price + '</div>';
             amountTd.innerHTML += '<input class="amount" onchange="changeTotal()" type="number" value="1" min="0" max="99" step="1">';
             delTd.innerHTML += '<div id="del" onclick="delItem(this)">X</div>' 
@@ -88,6 +88,40 @@ function delItem(item){
 
     table.deleteRow(indexRow-1);
     changeTotal();
+}
+
+function buyItens(){
+    let itens = document.getElementsByClassName("item");
+    let bagItens = [];
+
+    for (var i=0; i < itens.length; i++) {
+        let elementName = itens[i].getElementsByClassName("nameItem");
+        let elementPrice = itens[i].getElementsByClassName("price");
+        let elementAmount = itens[i].getElementsByClassName("amount"); 
+
+        bagItens.push({name: elementName[0].innerHTML, price: elementPrice[0].innerHTML, amount: elementAmount[0].value});
+    }
+    
+    let elementTotal = document.getElementById('total').innerHTML;
+    bagItens.push({total: elementTotal});
+    let email = document.getElementById('confirmEmail').value;
+    var regexEmail = /^[\w\d._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i;
+
+    if (!regexEmail.test(email)) {
+        alert('Email inválido');
+        return false;
+    }
+
+    let textEmail = toString(bagItens);
+
+    $.get('../php/cart.php', {load: 2, message: textEmail, email: email}, function(data){
+        alert(data);
+        document.location.reload(true);  
+    })
+}
+
+function toString(listItens) {
+    return JSON.stringify(listItens);
 }
 
 

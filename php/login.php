@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $con = mysqli_connect('localhost','root','','pokemart');
     $email = filter_var($_REQUEST['email'], FILTER_SANITIZE_STRING);
     $password = filter_var($_REQUEST['password'], FILTER_SANITIZE_STRING);
@@ -22,6 +23,6 @@
     if(empty($login)){
         echo json_encode($login);
         exit;
-    } 
+    }
     echo json_encode($login);
 ?>
