@@ -2,4 +2,4 @@
 Aqui está meu trabalho final de Web 2, desenvolvido na faculdade.
 
 
-Mais informações serão adicionadas posteriormente...
+Link do site em funcionamento: https://pokemart-guiajalla.000webhostapp.com
